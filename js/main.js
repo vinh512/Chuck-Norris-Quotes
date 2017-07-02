@@ -9,11 +9,11 @@ xhr.onreadystatechange = function() {
     // converts response (string) into a JSON format
     var response = JSON.parse(xhr.responseText)
 
-    // cache DOM element
+    // grabs the container element
     var quoteDiv = document.getElementById('quote-container');
 
     // sets the quote inside the quote div
-    quoteDiv.innerHTML = response.value
+    quoteDiv.innerHTML = '<img class="hvr-buzz-out" src="' + response.icon_url + '" />' + response.value
   }
 }
 
