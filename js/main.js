@@ -9,11 +9,22 @@ xhr.onreadystatechange = function() {
     // converts response (string) into a JSON format
     var response = JSON.parse(xhr.responseText)
 
-    // grabs the container element
-    var quoteDiv = document.getElementById('quote-container');
+    // store the main div element to append elements
+    var mainDiv = document.querySelector('main');
 
-    // sets the quote inside the quote div
-    quoteDiv.innerHTML = '<img class="hvr-buzz-out" src="' + response.icon_url + '" />' + response.value
+    // create an img element, set src to icon pic from JSON, add class to shake
+    var imgIcon = document.createElement('img');
+    imgIcon.setAttribute('src', response.icon_url);
+    imgIcon.classList.add('hvr-buzz-out');
+
+    // create a blank div, add a class to it, then populate div with quote
+    var quoteDiv = document.createElement('div');
+    quoteDiv.classList.add('quote-container')
+    quoteDiv.innerHTML = response.value;
+
+    // append the icon and quote to the main div
+    mainDiv.appendChild(imgIcon);
+    mainDiv.appendChild(quoteDiv);
   }
 }
 
