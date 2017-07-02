@@ -5,6 +5,7 @@ body {
   padding-top: 2em;
   text-align: center;
   font-family: 'Gloria Hallelujah', cursive;
+  color: #4F4F4F;
 }
 
 main img {
@@ -14,19 +15,29 @@ main img {
 
 main {
   display: block;
+}
 
+.hide {
+  display: none;
 }
 
 .fact-container {
   background-color: #FFD383;
+  height: 300px;
+  /*position: relative;*/
 }
 
 #fact {
   font-size: 1.5em;
-  padding: 5em;
+  padding: 5em 0;
   max-width: 800px;
+  max-height: 10px;
   margin: 0 auto;
   font-family: 'Quattrocento', serif;
+  /*position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
 }
 
 .button {
