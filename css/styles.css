@@ -16,12 +16,11 @@ main {
 
 }
 
-#quote-container {
+p {
   font-size: 1.5em;
   max-width: 800px;
   margin: 0 auto;
   background-color: cyan;
-
 }
 
 /*main img:hover {
