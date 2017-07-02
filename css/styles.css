@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding-top: 2em;
   text-align: center;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 
 main img {
@@ -16,16 +17,46 @@ main {
 
 }
 
-p {
-  font-size: 1.5em;
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: cyan;
+.fact-container {
+  background-color: #FFD383;
 }
 
-/*main img:hover {
-  transform: scale(1.2);
-}*/
+#fact {
+  font-size: 1.5em;
+  padding: 5em;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Quattrocento', serif;
+}
+
+.button {
+  
+border: none;
+background: none;
+outline:0;
+
+
+  display: block;
+  width: 120px;
+  margin: 1em auto;
+  font-size: 1.5em;
+  line-height: 50px;
+  color: #FFF;
+  border-radius: 5px;
+  transition: all 0.2s ;
+}
+
+.btnOrange {
+  background: #FFAA40;
+}
+
+.btnOrange.btnBorder {
+  box-shadow: 0px 0px 0px 0px #A66615;
+}
+
+.btnOrange.btnBorder:hover {
+  box-shadow: 0px 0px 0px 5px #A66615;
+}
 
 @-webkit-keyframes hvr-buzz-out {
            10% {

@@ -1,8 +1,5 @@
-
-
-
 // var factDiv = document.getElementsByClassName('quote-container')[0];
-var factDiv = document.getElementById('fact-container');
+var factDiv = document.getElementById('fact');
 
 // creates an instance of the XMLHttpRequest object
 var xhr = new XMLHttpRequest();
@@ -19,8 +16,6 @@ xhr.onreadystatechange = function() {
     factDiv.innerHTML = response.value;
   }
 }
-
-
 
 // XMLHttpRequest object's open method prepares the request
 xhr.open('GET', 'https://api.chucknorris.io/jokes/random', true);
