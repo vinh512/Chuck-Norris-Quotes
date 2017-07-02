@@ -7,31 +7,10 @@
   <body>
     <h1>Chuck Norris Quotes!</h1>
     <main>
-      <div class="quote">
+      <div id="quote">
 
       </div>
     </main>
-    <script type="text/javascript">
-
-      // creates a new request object
-      var xhr = new XMLHttpRequest();
-
-
-
-      xhr.onreadystatechange = function() {
-        console.log('hi')
-        if (xhr.readyState === 4 && xhr.status === 200) {
-
-          var response = JSON.parse(xhr.responseText)
-          var quoteDiv = document.getElementById('quote');
-          console.log(response);
-
-        }
-      }
-
-      xhr.open('GET', 'https://api.chucknorris.io/jokes/random');
-      xhr.send(null);
-
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
