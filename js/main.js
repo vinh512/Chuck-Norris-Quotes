@@ -1,20 +1,24 @@
-console.log('hi');
+// creates an instance of the XMLHttpRequest object
+var xhr = new XMLHttpRequest();
 
-  // creates a new request object
-  var xhr = new XMLHttpRequest();
+// The onreadystatechange function is called every time the readyState changes.
+xhr.onreadystatechange = function() {
+  // when readyState is 4 and status is 200, the response is ready
+  if (xhr.readyState === 4 && xhr.status === 200) {
 
-  xhr.onreadystatechange = function() {
-    console.log('hi')
-    if (xhr.readyState === 4 && xhr.status === 200) {
+    // converts response (string) into a JSON format
+    var response = JSON.parse(xhr.responseText)
 
-      var response = JSON.parse(xhr.responseText)
-      var quoteDiv = document.getElementById('quote');
+    // cache DOM element
+    var quoteDiv = document.getElementById('quote-container');
 
-      quoteDiv.innerHTML = '<div>' + response.value + '</div>';
-
-      console.log(response);
-    }
+    // sets the quote inside the quote div
+    quoteDiv.innerHTML = response.value
   }
+}
 
-  xhr.open('GET', 'https://api.chucknorris.io/jokes/random');
-  xhr.send(null);
+// XMLHttpRequest object's open method prepares the request
+xhr.open('GET', 'https://api.chucknorris.io/jokes/random', true);
+
+// sends the prepared request to the server
+xhr.send(null);
