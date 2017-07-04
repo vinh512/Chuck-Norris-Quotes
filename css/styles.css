@@ -1,11 +1,9 @@
-
-
 body {
   margin: 0;
   padding-top: 2em;
   text-align: center;
   font-family: 'Gloria Hallelujah', cursive;
-  color: #4F4F4F;
+  color: #968f8f;
 }
 
 main img {
@@ -17,14 +15,26 @@ main {
   display: block;
 }
 
+p {
+  color: #A66615;
+}
+
 .hide {
   display: none;
 }
 
-.fact-container {
+.content {
   background-color: #FFD383;
   height: 300px;
-  /*position: relative;*/
+
+  /* the parent container setting fact div centered */
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #fact {
@@ -34,10 +44,27 @@ main {
   max-height: 10px;
   margin: 0 auto;
   font-family: 'Quattrocento', serif;
-  /*position: absolute;
+
+  /* vertically & horizontally centers the fact div within the content div */
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);*/
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+
+  /* centers the text within the div */
+  /*display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;*/
+
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+
 }
 
 .button {
@@ -151,7 +178,6 @@ main {
 
 
 .hvr-buzz-out {
-  /*display: inline-block;*/
   vertical-align: middle;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);

@@ -1,12 +1,13 @@
-// var factDiv = document.getElementsByClassName('quote-container')[0];
 var factDiv = document.getElementById('fact');
+var factContainer = document.getElementById('fact-container');
+var loadIconContainer = document.getElementById('loading');
 
 function loadFact() {
   // creates an instance of the XMLHttpRequest object
   var xhr = new XMLHttpRequest();
 
   // adds hide class to hide the fact in order to display just the load icon
-  factDiv.classList.add('hide');
+  factContainer.classList.add('hide');
 
   // The onreadystatechange function is called every time the readyState changes.
   xhr.onreadystatechange = function() {
@@ -17,22 +18,30 @@ function loadFact() {
       // converts response (string) into a JSON format
       var response = JSON.parse(xhr.responseText)
 
+      // removes the load icon
+      loadIconContainer.innerHTML = '';
+
+      // makes the fact visible again by removing hide style
+      factContainer.classList.remove('hide');
+
       // ensures the first letter of the fact is always a capital letter
       response = response.value.charAt(0).toUpperCase() + response.value.slice(1);
 
-      // removes the load icon
-      document.getElementById("loading").innerHTML = '';
+      // stores last char of fact
+      var lastChar = response.charAt(response.length-1);
 
-      // makes the fact visible again by removing hide div
-      factDiv.classList.remove('hide');
+      // if the last char isn't a punctuation, add a period
+      if (lastChar !== '.' && lastChar !== '!' && lastChar !== '?') {
+        response += '.';
+      }
 
-      // create a blank div, add a class to it, then populate div with quote
-      factDiv.innerHTML = response.value.charAt(0).toUpperCase() + response.value.slice(1);
+      // populate div with fact
+      factDiv.innerHTML = response;
     }
   };
 
   // inserts the load icon
-  document.getElementById("loading").innerHTML = '<img src="img/load-icon.gif" />'; // Set here the image before sending request
+  loadIconContainer.innerHTML = '<img src="img/load-icon.gif" />'; // Set here the image before sending request
 
   // XMLHttpRequest object's open method prepares the request
   xhr.open('GET', 'https://api.chucknorris.io/jokes/random', true);
