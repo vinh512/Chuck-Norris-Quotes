@@ -15,6 +15,10 @@ main img {
   margin: 1em auto 2em auto;
 }
 
+#loading {
+  margin: 0 auto;
+}
+
 p {
   color: #A66615;
 }
@@ -51,7 +55,6 @@ p {
   background: none;
   outline:0;
   display: block;
-  width: 120px;
   margin: 1em auto;
   font-size: 1.5em;
   line-height: 50px;
@@ -59,6 +62,7 @@ p {
   border-radius: 5px;
   transition: all 0.2s;
   cursor: pointer;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 
 .btnOrange {
@@ -156,24 +160,7 @@ p {
 }
 
 .hvr-buzz-out {
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale
-}
-
-.hvr-buzz-out:hover,
-.hvr-buzz-out:focus,
-.hvr-buzz-out:active {
-  -webkit-animation-name: hvr-buzz-out;
-  animation-name: hvr-buzz-out;
-  -webkit-animation-duration: .75s;
-  animation-duration: .75s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1
+  -webkit-animation: hvr-buzz-out 1s;
+  -moz-animation: hvr-buzz-out 1s;
+  animation: hvr-buzz-out 1s;
 }

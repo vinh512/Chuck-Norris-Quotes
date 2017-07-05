@@ -1,6 +1,14 @@
 var factDiv = document.getElementById('fact');
 var factContainer = document.getElementById('fact-container');
 var loadIcon = document.getElementById('loading');
+var chuckIcon = document.getElementById('chuckIcon');
+
+/*** IIFE makes chuck icon shake after a short duration ***/
+(function() {
+  setInterval(function() {
+    toggleClass(chuckIcon, 'hvr-buzz-out');
+  }, 2500);
+})()
 
 /*** toggles the class on a specified element ***/
 function toggleClass(element, className) {
